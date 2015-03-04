@@ -1,0 +1,67 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1421334660987
+Build-Jdk: 1.7.0_65
+Built-By: alnic
+Bundle-Category: jahia-module
+Bundle-Description: This is the custom module (dogModule) for running on
+  a Digital Factory server.
+Bundle-DocURL: http://www.jahia.com
+Bundle-ManifestVersion: 2
+Bundle-Name: dogModule
+Bundle-SymbolicName: dogModule
+Bundle-Vendor: Jahia Solutions Group SA
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Implementation-Title: dogModule
+Implementation-URL: http://www.jahia.com
+Implementation-Vendor: Jahia Solutions Group SA
+Implementation-Version: 1.0-SNAPSHOT
+Import-Package: org.jahia.taglibs.search;version="[7.0,8)",org.jahia.tag
+ libs.template;version="[7.0,8)",org.jahia.services.usermanager,org.jahi
+ a.taglibs.uicomponents.portlets;version="[7.0,8)",org.jahia.taglibs.uti
+ lity;version="[7.0,8)",org.jahia.taglibs.utility.constants;version="[7.
+ 0,8)",org.jahia.taglibs.internal.i18n;version="[7.0,8)",javax.jcr;versi
+ on="[2.0,3)",org.apache.taglibs.standard.tei,org.jahia.taglibs.utility.
+ i18n;version="[7.0,8)",org.apache.commons.lang;version="[2.6,3)",org.ja
+ hia.taglibs.template.layoutmanager;version="[7.0,8)",org.jahia.taglibs.
+ internal.gwt;version="[7.0,8)",org.jahia.taglibs.uicomponents.i18n;vers
+ ion="[7.0,8)",org.apache.commons.id,org.jahia.taglibs.uicomponents.user
+ ;version="[7.0,8)",org.jahia.taglibs.internal.date;version="[7.0,8)",or
+ g.jahia.services.seo,org.jahia.taglibs.utility.session;version="[7.0,8)
+ ",org.jahia.data.viewhelper.principal,org.apache.taglibs.standard.tag.r
+ t.core,org.jahia.taglibs.user;version="[7.0,8)",org.jahia.taglibs.uicom
+ ponents.image;version="[7.0,8)",org.jahia.services.render,org.jahia.ser
+ vices.content,org.jahia.services.content.decorator,org.jahia.taglibs.qu
+ ery;version="[7.0,8)",org.jahia.services.render.scripting,org.jahia.tag
+ libs.jcr.query;version="[7.0,8)",org.jahia.taglibs.jcr.node;version="[7
+ .0,8)",org.apache.solr.schema,org.jahia.services.sites,org.jahia.except
+ ions,org.apache.commons.lang.math;version="[2.6,3)",org.jahia.taglibs.u
+ icomponents;version="[7.0,8)",org.jahia.taglibs.template.gwt;version="[
+ 7.0,8)",javax.servlet.http;version="[3.0,4)",org.jahia.taglibs.jcr;vers
+ ion="[7.0,8)",org.jahia.taglibs.internal.uicomponents;version="[7.0,8)"
+ ,org.jahia.taglibs.template.include;version="[7.0,8)",org.jahia.taglibs
+ .utility.siteproperties;version="[7.0,8)",org.jahia.services.content.no
+ detypes,org.jahia.taglibs.functions;version="[7.0,8)",org.jahia.taglibs
+ .template.pager;version="[7.0,8)",org.jahia.defaults.config.spring,org.
+ apache.taglibs.standard.functions,org.jahia.services,org.apache.taglibs
+ .standard.tag.common.core,org.jahia.utils,org.jahia.taglibs;version="[7
+ .0,8)",org.apache.taglibs.standard.tag.rt.fmt,org.apache.taglibs.unstan
+ dard;version="[7.0,8)",org.jahia.taglibs.uicomponents.loginform;version
+ ="[7.0,8)"
+Jahia-Depends: default
+Jahia-GroupId: org.jahia.modules
+Jahia-Module-Type: module
+Jahia-Required-Version: 7.0.0.2
+Jahia-Source-Control-Connection: scm:dummy:uri
+Jahia-Source-Control-DeveloperConnection: scm:dummy:uri
+Jahia-Source-Folders: /home/alnic/projets/workspaces/dogModule
+Jahia-Static-Resources: /css,/icons,/images,/img,/javascript
+Provide-Capability: com.jahia.services.content; nodetypes:List<String>="
+ jmix:dogContent,jnt:dog"
+Require-Capability: com.jahia.services.content; filter:="(nodetypes=jmix
+ :droppableContent)",com.jahia.services.content; filter:="(nodetypes=jnt
+ :content)"
+Specification-Title: dogModule
+Specification-Vendor: Jahia Solutions Group SA
+Specification-Version: 1.0-SNAPSHOT
+Tool: Bnd-2.1.0.20130426-122213
