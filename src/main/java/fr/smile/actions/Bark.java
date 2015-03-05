@@ -19,6 +19,8 @@ public class Bark extends Action {
 	private static final Logger logger = LoggerFactory.getLogger(Bark.class);
 
 	public ActionResult doExecute(HttpServletRequest req, RenderContext renderContext, Resource resource, JCRSessionWrapper session, Map<String, List<String>> parameters, URLResolver urlResolver) throws Exception {
+		//logger.warn("****" + resource.getNode().getUser() + "****");
+
 		logger.warn("Woof Woof");
 		return null;
 	}
