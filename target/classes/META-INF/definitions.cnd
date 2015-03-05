@@ -25,3 +25,7 @@
 [mnt:dogList] > jnt:content, mmix:dogContent
 
 [mnt:createDogForm] > jnt:content, mmix:dogContent
+
+[mnt:latestViewedDogs] > jnt:content, mmix:dogContent, mix:title, jmix:list
+- maxDogs (long) = 3 mandatory
+- dogsView (string, choicelist[templates=mnt:dog,resourceBundle])
