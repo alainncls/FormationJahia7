@@ -14,3 +14,5 @@
 - father (weakreference, choicelist[nodes='$currentSite//*;mnt:dog'])
 - birthdate (date)
 - technicalReference (string, choicelist[choiceList])
+
+[mnt:dogFamilyTree] > jnt:content, jmix:bindedComponent, mmix:dogContent

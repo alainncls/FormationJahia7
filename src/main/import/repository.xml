@@ -18,10 +18,13 @@
                          j:hiddenTemplate="false"
                          jcr:primaryType="jnt:contentTemplate">
                         <j:translation_en jcr:language="en"
+                                 jcr:mixinTypes="mix:title"
                                  jcr:primaryType="jnt:translation"
                                  jcr:title="dogTemplate"/>
                         <pagecontent jcr:primaryType="jnt:contentList">
                             <main-resource-display j:mainResourceView="detail" jcr:primaryType="jnt:mainResourceDisplay"/>
+                            <dogfamilytree j:bindedComponent="/modules/dogModule/templates/dogtemplate/pagecontent/main-resource-display"
+                                 jcr:primaryType="mnt:dogFamilyTree"/>
                         </pagecontent>
                     </dogtemplate>
                 </templates>

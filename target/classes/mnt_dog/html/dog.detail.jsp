@@ -6,6 +6,7 @@
 <%@ taglib prefix="utility" uri="http://www.jahia.org/tags/utilityLib" %>
 <%@ taglib prefix="template" uri="http://www.jahia.org/tags/templateLib" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="ui"uri="http://www.jahia.org/tags/uiComponentsLib" %>
 
 <h2>Nom du chien : ${currentNode.properties.name.string}</h2>
 <ul>
@@ -20,6 +21,8 @@
 	<c:set var="daddy" value="${currentNode.properties.father.node}"/>
 	 <c:if test="${not empty daddy}">
 		<li>Father : <a href="${daddy.url}">${daddy.properties.name.string}</a></li>
+		${jcr:isNodeType(daddy, 'mnt:dog')}
+		<c:set var="daddy" value="${ui:getBindedComponent(currentNode, renderContext, 'j:daddy')}"/>
 	</c:if>
 	<li>TechnicalReference : <jcr:nodePropertyRenderer node="${currentNode}" name="technicalReference" renderer="choiceList"/></li>
 
