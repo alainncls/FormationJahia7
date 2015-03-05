@@ -10,14 +10,14 @@
 
 <c:set var="boundDog" value="${ui:getBindedComponent(currentNode, renderContext,'j:bindedComponent')}"/>
 <c:if test="${jcr:isNodeType(boundDog, 'mnt:dog')}">
-	<h3>Arbre de ${boundDog.properties.name.string} :</h3>
+	<h3>Arbre de <template:module node="${boundDog}" view="hidden.name" /> :</h3>
 
 	<c:set var ="fatherProp" value="${boundDog.properties.father.node}" />
 	<c:if test="${not empty fatherProp}">
 		<p>
 			<c:forEach var="i" begin="1" end="5">
 				<c:if test="${not empty fatherProp}">
-					<a href="<c:url value="${fatherProp.url}" />">${fatherProp.properties.name.string}</a>
+					<a href="<c:url value="${fatherProp.url}" />"><template:module node="${fatherProp}" view="hidden.name" /></a>
 				</c:if>
 				<c:set var ="fatherProp" value="${fatherProp.properties.father.node}" />
 			</c:forEach>

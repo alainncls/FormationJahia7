@@ -20,3 +20,4 @@
 [mnt:dogHouse] > jnt:content, jmix:bindedComponent, mmix:dogContent
 - dogs (weakreference, choicelist[nodes='$currentSite//*;mnt:dog']) multiple
 
+[mnt:lastestDogs] > jnt:content, mmix:dogContent, jmix:list
