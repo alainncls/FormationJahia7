@@ -21,3 +21,7 @@
 - dogs (weakreference, choicelist[nodes='$currentSite//*;mnt:dog']) multiple
 
 [mnt:lastestDogs] > jnt:content, mmix:dogContent, jmix:list
+
+[mnt:dogList] > jnt:content, mmix:dogContent
+
+[mnt:createDogForm] > jnt:content, mmix:dogContent
