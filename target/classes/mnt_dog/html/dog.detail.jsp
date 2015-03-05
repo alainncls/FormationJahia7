@@ -16,20 +16,33 @@
 	<li><h3>Origin :</h3> <jcr:nodePropertyRenderer node="${currentNode}" name="origin" renderer="flagcountry"/></li>
 
 	<c:if test="${not empty currentNode.properties.birthdate}">
-	<li><h3>BirthDate :</h3> <fmt:formatDate type="date" dateStyle="medium" value="${currentNode.properties.birthdate.time}"/></li>
-</c:if>
-<c:set var="daddy" value="${currentNode.properties.father.node}"/>
-<c:if test="${not empty daddy}">
-<li><h3>Father :</h3> <a href="${daddy.url}">${daddy.properties.name.string}</a></li>
-</c:if>
-<li><h3>Couleur :</h3> <jcr:nodePropertyRenderer node="${currentNode}" name="technicalReference" renderer="choiceList"/></li>
-
-<br/><c:url value="${currentNode.url}" var="myUrl" />
-
-<form method="post" action="<c:url value='${currentNode.path}.bark.do' context='${url.base}'/>" name="bark" id="bark">
-	<input type="submit" value="bark" class="button" />
-</form>
-
-<a href="${myUrl}">LIEN VERS LA FICHE</a>
-
+		<li><h3>BirthDate :</h3> <fmt:formatDate type="date" dateStyle="medium" value="${currentNode.properties.birthdate.time}"/></li>
+	</c:if>
+	<c:set var="daddy" value="${currentNode.properties.father.node}"/>
+	<c:if test="${not empty daddy}">
+		<li><h3>Father :</h3> <a href="${daddy.url}">${daddy.properties.name.string}</a></li>
+	</c:if>
+	<li><h3>Couleur :</h3> <jcr:nodePropertyRenderer node="${currentNode}" name="technicalReference" renderer="choiceList"/></li>
 </ul>
+
+	<br/><c:url value="${currentNode.url}" var="myUrl" />
+	<c:if test="${jcr:hasPermission(currentNode,'bark')}">
+		<div>
+			<input type="submit" value="Bark !" class="button" id="submitButton"/>
+		</div>
+	</c:if>
+	<a href="${myUrl}">LIEN VERS LA FICHE</a>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#submitButton").click(function () {
+			$.ajax({
+				url : "<c:url value='${currentNode.path}.bark.do' context='${url.base}'/>",
+				type : "POST",
+				success : function() {
+					console.log("Woof Woof");
+				}
+			});
+		});
+	});
+</script>
