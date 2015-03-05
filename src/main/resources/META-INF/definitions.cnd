@@ -13,3 +13,4 @@
 - origin (string, choicelist[country, flag])
 - father (weakreference, choicelist[nodes='$currentSite//*;mnt:dog'])
 - birthdate (date)
+- technicalReference (string, choicelist[choiceList])
