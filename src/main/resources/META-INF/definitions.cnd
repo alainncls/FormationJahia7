@@ -5,7 +5,7 @@
 
 [mmix:dogContent] > jmix:droppableContent mixin
 
-[mnt:dog] > jnt:content, mmix:dogContent
+[mnt:dog] > jnt:content, mmix:dogContent, jmix:editorialContent
 - name (string) mandatory
 - bio (string, richtext) i18n
 - image (weakreference, picker[type='image'])

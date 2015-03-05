@@ -10,23 +10,21 @@
 
 <h2>Nom du chien : ${currentNode.properties.name.string}</h2>
 <ul>
-	<li>Bio : ${currentNode.properties.bio.string}</li>
-	<li><img src="${currentNode.properties.image.node.url}"/></li>
-	<li>Breed : <jcr:nodePropertyRenderer node="${currentNode}" name="breed" renderer="resourceBundle"/></li>
-	<li>Origin : <jcr:nodePropertyRenderer node="${currentNode}" name="origin" renderer="flagcountry"/></li>
+	<li><h3>Bio :</h3> ${currentNode.properties.bio.string}</li>
+	<li><h3><img src="${currentNode.properties.image.node.url}"/></li>
+	<li><h3>Breed :</h3> <jcr:nodePropertyRenderer node="${currentNode}" name="breed" renderer="resourceBundle"/></li>
+	<li><h3>Origin :</h3> <jcr:nodePropertyRenderer node="${currentNode}" name="origin" renderer="flagcountry"/></li>
 
 	 <c:if test="${not empty currentNode.properties.birthdate}">
-		<li>BirthDate : <fmt:formatDate type="date" dateStyle="medium" value="${currentNode.properties.birthdate.time}"/></li>
+		<li><h3>BirthDate :</h3> <fmt:formatDate type="date" dateStyle="medium" value="${currentNode.properties.birthdate.time}"/></li>
 	</c:if>
 	<c:set var="daddy" value="${currentNode.properties.father.node}"/>
-	 <c:if test="${not empty daddy}">
-		<li>Father : <a href="${daddy.url}">${daddy.properties.name.string}</a></li>
-		${jcr:isNodeType(daddy, 'mnt:dog')}
-		<c:set var="daddy" value="${ui:getBindedComponent(currentNode, renderContext, 'j:daddy')}"/>
+	<c:if test="${not empty daddy}">
+		<li><h3>Father :</h3> <a href="${daddy.url}">${daddy.properties.name.string}</a></li>
 	</c:if>
-	<li>TechnicalReference : <jcr:nodePropertyRenderer node="${currentNode}" name="technicalReference" renderer="choiceList"/></li>
+	<li><h3>Couleur :</h3> <jcr:nodePropertyRenderer node="${currentNode}" name="technicalReference" renderer="choiceList"/></li>
 
 	<br/><c:url value="${currentNode.url}" var="myUrl" />
-	<a href="${myUrl}">LIEN</a>
+	<a href="${myUrl}">LIEN VERS LA FICHE</a>
 
 </ul>
