@@ -22,23 +22,26 @@ public class ChoiceListInitializer extends AbstractChoiceListRenderer implements
 
     private String key;
 
+    private List<String> colors = Arrays.asList("red", "white", "black");
+    private List<String> colors_fr = Arrays.asList("roux", "blanc", "noir");
+
     /**
      * {@inheritDoc}
      */
-    public List<ChoiceListValue> getChoiceListValues(ExtendedPropertyDefinition epd, String param, List<ChoiceListValue> values,
-                                                     Locale locale, Map<String, Object> context) {
+    public List<ChoiceListValue> getChoiceListValues(ExtendedPropertyDefinition epd, String param, List<ChoiceListValue> values, Locale locale, Map<String, Object> context) {
 
         List<ChoiceListValue> myChoiceList = new ArrayList<ChoiceListValue>();
 
         if (context == null) {
             return myChoiceList;
         }
-
-        HashMap<String, Object> myPropertiesMap = null;
-
-        myChoiceList.add(new ChoiceListValue("Référence #1","1"));
-        myChoiceList.add(new ChoiceListValue("Référence #2","2"));
-        myChoiceList.add(new ChoiceListValue("Référence #3","3"));
+        
+        
+        int i = 0;
+        for (String color : getColors(locale)) {
+            myChoiceList.add(new ChoiceListValue( color, Integer.toString(i) ) );
+            i++;
+        }
 
         //Return the list
         return myChoiceList;
@@ -58,21 +61,28 @@ public class ChoiceListInitializer extends AbstractChoiceListRenderer implements
         return key;
     }
 
+    public List<String> getColors(Locale locale) {
+        return (locale.getLanguage() == Locale.FRENCH.getLanguage())?colors_fr:colors;
+    }
+
     /**
      * {@inheritDoc}
      */
     public String getStringRendering(RenderContext context, JCRPropertyWrapper propertyWrapper) throws RepositoryException {
         final StringBuilder sb = new StringBuilder();
 
+        List<String> colorList = getColors(context.getUILocale());
+        int i;
+
         if (propertyWrapper.isMultiple()) {
-            sb.append('{');
             final Value[] values = propertyWrapper.getValues();
             for (Value value : values) {
-                sb.append('[').append(value.getString()).append(']');
+                i = Integer.parseInt(value.getString());
+                sb.append(colorList.get(i)).append(", ");
             }
-            sb.append('}');
         } else {
-            sb.append('[').append(propertyWrapper.getValue().getString()).append(']');
+            i = Integer.parseInt(propertyWrapper.getValue().getString());
+            sb.append(colorList.get(i));
         }
 
         return sb.toString();
@@ -82,6 +92,7 @@ public class ChoiceListInitializer extends AbstractChoiceListRenderer implements
      * {@inheritDoc}
      */
     public String getStringRendering(Locale locale, ExtendedPropertyDefinition propDef, Object propertyValue) throws RepositoryException {
-        return "[" + propertyValue.toString() + "]";
+        int i = (Integer)propertyValue;
+        return getColors(locale).get(i);
     }
 }

@@ -6,6 +6,7 @@
 <%@ taglib prefix="utility" uri="http://www.jahia.org/tags/utilityLib" %>
 <%@ taglib prefix="template" uri="http://www.jahia.org/tags/templateLib" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="ui"uri="http://www.jahia.org/tags/uiComponentsLib" %>
 
 <h2>Nom du chien : ${currentNode.properties.name.string}</h2>
 <ul>
@@ -18,12 +19,12 @@
 		<li>BirthDate : <fmt:formatDate type="date" dateStyle="medium" value="${currentNode.properties.birthdate.time}"/></li>
 	</c:if>
 	<c:set var="daddy" value="${currentNode.properties.father.node}"/>
-	 <c:if test="${not empty daddy}">
+	<c:if test="${not empty daddy}">
 		<li>Father : <a href="${daddy.url}">${daddy.properties.name.string}</a></li>
 	</c:if>
 	<li>TechnicalReference : <jcr:nodePropertyRenderer node="${currentNode}" name="technicalReference" renderer="choiceList"/></li>
 
 	<br/><c:url value="${currentNode.url}" var="myUrl" />
-	<a href="${myUrl}">LIEN</a>
+	<a href="${myUrl}">LIEN VERS LA FICHE</a>
 
 </ul>
