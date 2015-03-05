@@ -22,8 +22,8 @@ public class ChoiceListInitializer extends AbstractChoiceListRenderer implements
 
     private String key;
 
-    private List<String> colors = Arrays.asList("red", "white", "black");
-    private List<String> colors_fr = Arrays.asList("roux", "blanc", "noir");
+    private List<String> colors = Arrays.asList("Red", "White", "Black");
+    private List<String> colors_fr = Arrays.asList("Roux", "Blanc", "Noir");
 
     /**
      * {@inheritDoc}
