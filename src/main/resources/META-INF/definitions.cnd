@@ -16,3 +16,7 @@
 - technicalReference (string, choicelist[choiceList])
 
 [mnt:dogFamilyTree] > jnt:content, jmix:bindedComponent, mmix:dogContent
+
+[mnt:dogHouse] > jnt:content, jmix:bindedComponent, mmix:dogContent
+- dogs (weakreference, choicelist[nodes='$currentSite//*;mnt:dog']) multiple
+
