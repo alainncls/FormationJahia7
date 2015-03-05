@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1421338384260
+Bnd-LastModified: 1421420749924
 Build-Jdk: 1.7.0_65
 Built-By: alnic
 Bundle-Category: jahia-module
@@ -16,38 +16,39 @@ Implementation-Title: dogModule
 Implementation-URL: http://www.jahia.com
 Implementation-Vendor: Jahia Solutions Group SA
 Implementation-Version: 1.0-SNAPSHOT
-Import-Package: org.jahia.taglibs.utility.i18n;version="[7.0,8)",org.jah
- ia.taglibs.functions;version="[7.0,8)",org.jahia.taglibs.internal.date;
- version="[7.0,8)",org.jahia.exceptions,org.jahia.taglibs.template;versi
- on="[7.0,8)",org.jahia.taglibs.template.layoutmanager;version="[7.0,8)"
- ,org.jahia.taglibs.uicomponents.portlets;version="[7.0,8)",org.jahia.se
- rvices.render,org.jahia.taglibs.template.pager;version="[7.0,8)",org.ja
- hia.taglibs.utility.constants;version="[7.0,8)",javax.servlet.http;vers
- ion="[3.0,4)",org.jahia.taglibs.uicomponents.user;version="[7.0,8)",org
- .jahia.taglibs.uicomponents;version="[7.0,8)",org.jahia.taglibs.interna
- l.uicomponents;version="[7.0,8)",org.jahia.taglibs.utility.siteproperti
- es;version="[7.0,8)",org.jahia.services.content.nodetypes,org.jahia.tag
- libs.jcr.query;version="[7.0,8)",org.jahia.taglibs.template.gwt;version
- ="[7.0,8)",org.jahia.taglibs.utility;version="[7.0,8)",org.jahia.servic
- es.content.decorator,org.jahia.data.viewhelper.principal,org.jahia.tagl
- ibs.uicomponents.i18n;version="[7.0,8)",org.apache.commons.lang;version
- ="[2.6,3)",org.jahia.taglibs.template.include;version="[7.0,8)",org.jah
- ia.taglibs.user;version="[7.0,8)",org.jahia.taglibs.query;version="[7.0
- ,8)",org.apache.taglibs.standard.tei,org.apache.taglibs.standard.tag.co
- mmon.core,org.apache.taglibs.standard.tag.rt.core,org.jahia.taglibs;ver
- sion="[7.0,8)",org.apache.taglibs.unstandard;version="[7.0,8)",org.jahi
- a.taglibs.utility.session;version="[7.0,8)",org.jahia.services.usermana
- ger,org.jahia.services.sites,org.jahia.defaults.config.spring,org.apach
- e.solr.schema,org.jahia.taglibs.jcr.node;version="[7.0,8)",org.jahia.ta
- glibs.internal.gwt;version="[7.0,8)",org.jahia.services.seo,org.jahia.s
- ervices.render.scripting,org.jahia.taglibs.internal.i18n;version="[7.0,
- 8)",org.jahia.taglibs.uicomponents.image;version="[7.0,8)",org.apache.t
- aglibs.standard.tag.rt.fmt,org.jahia.services.content,org.jahia.taglibs
- .jcr;version="[7.0,8)",org.apache.commons.lang.math;version="[2.6,3)",o
- rg.apache.taglibs.standard.functions,org.jahia.utils,org.jahia.taglibs.
- uicomponents.loginform;version="[7.0,8)",org.jahia.services,javax.jcr;v
- ersion="[2.0,3)",org.apache.commons.id,org.jahia.taglibs.search;version
- ="[7.0,8)"
+Import-Package: javax.jcr;version="[2.0,3)",org.jahia.services.content,o
+ rg.jahia.services.content.nodetypes,org.jahia.services.render,org.jahia
+ .services.content.nodetypes.initializers,org.jahia.services.content.nod
+ etypes.renderer,org.slf4j;version="[1.6,2)",org.jahia.taglibs.uicompone
+ nts.loginform;version="[7.0,8)",org.jahia.taglibs.internal.gwt;version=
+ "[7.0,8)",javax.servlet.http;version="[3.0,4)",org.apache.commons.id,or
+ g.jahia.services.sites,org.jahia.taglibs.template;version="[7.0,8)",org
+ .jahia.taglibs.utility.siteproperties;version="[7.0,8)",org.jahia.tagli
+ bs.template.layoutmanager;version="[7.0,8)",org.jahia.taglibs.internal.
+ uicomponents;version="[7.0,8)",org.apache.taglibs.standard.functions,or
+ g.jahia.taglibs.jcr.node;version="[7.0,8)",org.jahia.services.usermanag
+ er,org.jahia.taglibs.jcr;version="[7.0,8)",org.jahia.taglibs.template.g
+ wt;version="[7.0,8)",org.jahia.services.content.decorator,org.apache.co
+ mmons.lang.math;version="[2.6,3)",org.jahia.taglibs.uicomponents;versio
+ n="[7.0,8)",org.jahia.taglibs.uicomponents.user;version="[7.0,8)",org.j
+ ahia.defaults.config.spring,org.jahia.taglibs.uicomponents.image;versio
+ n="[7.0,8)",org.jahia.taglibs.user;version="[7.0,8)",org.apache.taglibs
+ .standard.tag.rt.core,org.jahia.exceptions,org.jahia.taglibs.template.p
+ ager;version="[7.0,8)",org.jahia.taglibs.utility;version="[7.0,8)",org.
+ apache.taglibs.standard.tag.common.core,org.jahia.services,org.jahia.ta
+ glibs.internal.i18n;version="[7.0,8)",org.jahia.taglibs.uicomponents.i1
+ 8n;version="[7.0,8)",org.jahia.services.seo,org.apache.taglibs.standard
+ .tag.rt.fmt,org.jahia.taglibs.search;version="[7.0,8)",org.jahia.data.v
+ iewhelper.principal,org.jahia.taglibs.query;version="[7.0,8)",org.jahia
+ .taglibs.internal.date;version="[7.0,8)",org.jahia.taglibs.template.inc
+ lude;version="[7.0,8)",org.jahia.taglibs.uicomponents.portlets;version=
+ "[7.0,8)",org.jahia.taglibs.utility.session;version="[7.0,8)",org.jahia
+ .taglibs.utility.constants;version="[7.0,8)",org.jahia.taglibs.utility.
+ i18n;version="[7.0,8)",org.jahia.taglibs.jcr.query;version="[7.0,8)",or
+ g.apache.solr.schema,org.jahia.taglibs.functions;version="[7.0,8)",org.
+ jahia.services.render.scripting,org.jahia.utils,org.jahia.taglibs;versi
+ on="[7.0,8)",org.apache.taglibs.unstandard;version="[7.0,8)",org.apache
+ .taglibs.standard.tei,org.apache.commons.lang;version="[2.6,3)"
 Jahia-Depends: default
 Jahia-GroupId: org.jahia.modules
 Jahia-Module-Type: module
@@ -60,7 +61,16 @@ Provide-Capability: com.jahia.services.content; nodetypes:List<String>="
  mmix:dogContent,mnt:dog"
 Require-Capability: com.jahia.services.content; filter:="(nodetypes=jmix
  :droppableContent)",com.jahia.services.content; filter:="(nodetypes=jnt
- :content)"
+ :content)",com.jahia.services.content; filter:="(nodetypes=jnt:contentF
+ older)",com.jahia.services.content; filter:="(nodetypes=jnt:contentList
+ )",com.jahia.services.content; filter:="(nodetypes=jnt:contentTemplate)
+ ",com.jahia.services.content; filter:="(nodetypes=jnt:folder)",com.jahi
+ a.services.content; filter:="(nodetypes=jnt:mainResourceDisplay)",com.j
+ ahia.services.content; filter:="(nodetypes=jnt:module)",com.jahia.servi
+ ces.content; filter:="(nodetypes=jnt:modules)",com.jahia.services.conte
+ nt; filter:="(nodetypes=jnt:portletFolder)",com.jahia.services.content;
+  filter:="(nodetypes=jnt:templatesFolder)",com.jahia.services.content; 
+ filter:="(nodetypes=jnt:translation)"
 Specification-Title: dogModule
 Specification-Vendor: Jahia Solutions Group SA
 Specification-Version: 1.0-SNAPSHOT
