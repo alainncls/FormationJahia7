@@ -15,7 +15,7 @@
 	<li><h3>Breed :</h3> <jcr:nodePropertyRenderer node="${currentNode}" name="breed" renderer="resourceBundle"/></li>
 	<li><h3>Origin :</h3> <jcr:nodePropertyRenderer node="${currentNode}" name="origin" renderer="flagcountry"/></li>
 
-	 <c:if test="${not empty currentNode.properties.birthdate}">
+	<c:if test="${not empty currentNode.properties.birthdate}">
 		<li><h3>BirthDate :</h3> <fmt:formatDate type="date" dateStyle="medium" value="${currentNode.properties.birthdate.time}"/></li>
 	</c:if>
 	<c:set var="daddy" value="${currentNode.properties.father.node}"/>
@@ -25,6 +25,11 @@
 	<li><h3>Couleur :</h3> <jcr:nodePropertyRenderer node="${currentNode}" name="technicalReference" renderer="choiceList"/></li>
 
 	<br/><c:url value="${currentNode.url}" var="myUrl" />
+
+	<form method="post" action="<c:url value='${currentNode.path}.bark.do' context='${url.base}'/>" name="bark" id="bark">
+		<input type="submit" value="Make him bark !" class="button" />
+	</form>
+
 	<a href="${myUrl}">LIEN VERS LA FICHE</a>
 
 </ul>
