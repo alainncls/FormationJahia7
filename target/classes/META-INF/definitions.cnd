@@ -1,7 +1,15 @@
 <jnt = 'http://www.jahia.org/jahia/nt/1.0'>
 <jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<mnt = 'http://www.smile.org/jahia/nt/1.0'>
+<mmix = 'http://www.smile.org/jahia/mix/1.0'>
 
-[jmix:dogContent] > jmix:droppableContent mixin
+[mmix:dogContent] > jmix:droppableContent mixin
 
-[jnt:dog] > jnt:content, jmix:dogContent
-- Name (string)
+[mnt:dog] > jnt:content, mmix:dogContent
+- name (string) mandatory
+- bio (string, richtext) i18n
+- image (weakreference, picker[type='image'])
+- breed (string, choicelist[resourceBundle])= 'Labrador' < 'Labrador', 'Teckel', 'Berger allemand'
+- origin (string, choicelist[country, flag])
+- father (weakreference, choicelist[nodes='/sites/systemsite/categories;mnt:dog'])
+- birthdate (date)
